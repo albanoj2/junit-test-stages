@@ -28,6 +28,7 @@ dependencies {
 }
 
 test {
+
     useJUnitPlatform {
         excludeTags 'integration'
     }
@@ -38,9 +39,11 @@ test {
 }
 
 task integrationTest(type: Test) {
+
     useJUnitPlatform {
         includeTags 'integration'
     }
+    
     check.dependsOn it
     shouldRunAfter test
     
